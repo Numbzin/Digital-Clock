@@ -9,12 +9,19 @@ eu tava sem ideia do que fazer hj, decidi fazer um relogio pq nunca tinha feito 
 ## Como usar
 
 1. **Clone o repositório**:
+
+```
    git clone https://github.com/Numbzin/digital-clock.git
+```
 
 2. **Abra o projeto**:
 
    - Navegue até a pasta do projeto:
+
+   ```
      cd digital-clock
+   ```
+
    - Abra o arquivo `index.html` no seu navegador.
 
 3. **Personalize**:
