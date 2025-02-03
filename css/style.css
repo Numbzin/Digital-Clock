@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Hack", sans-serif;
+  color: #fff;
+  padding: 1rem;
+}
+
+@font-face {
+  font-family: "Digital";
+  src: url("../fonts/Digital.otf");
+}
+
+@font-face {
+  font-family: "Hack";
+  src: url("../fonts/Hack-Bold.ttf");
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.text h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-family: "Hack", sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #7700ff, #ffffff, #ffffff, #ff00ff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 5s infinite;
+}
+
+.digital-clock {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  user-select: none;
+  padding: 1rem;
+  border: 0.5rem solid #2d2d2d;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #2d2d2d;
+  font-weight: bold;
+  font-family: "Hack";
+  margin: 1rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+.week .active {
+  color: #fff;
+}
+
+.time {
+  font-family: "Digital";
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hour,
+.min,
+.dot {
+  font-size: clamp(4rem, 15vw, 13rem);
+  line-height: 1;
+  margin: 0 0.2rem;
+}
+
+.min {
+  margin-left: -1vw;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .digital-clock {
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .week {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+  }
+
+  .hour,
+  .min,
+  .dot {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .min {
+    margin-left: -0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hour,
+  .min,
+  .dot {
+    font-size: 2.5rem;
+  }
+
+  .min {
+    margin-left: 1px;
+  }
+
+  .week {
+    font-size: 0.7rem;
+    gap: 0.3rem;
+  }
+}
