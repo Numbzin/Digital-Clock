@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   font-family: "Hack", sans-serif;
   color: #fff;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 @font-face {
@@ -39,7 +39,7 @@ body {
 }
 
 .text {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -53,6 +53,9 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 5s infinite;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .digital-clock {
@@ -65,20 +68,23 @@ body {
   padding: 1rem;
   border: 0.5rem solid #2d2d2d;
   max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 2rem;
 }
 
 .week {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: #2d2d2d;
   font-weight: bold;
   font-family: "Hack";
-  margin: 1rem;
-  font-size: clamp(0.8rem, 3vw, 1rem);
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  padding: 1rem;
+}
+
+.week div {
+  transition: color 0.3s ease;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.5rem;
 }
 
 .week .active {
@@ -89,20 +95,18 @@ body {
   font-family: "Digital";
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .hour,
 .min,
 .dot {
-  font-size: clamp(4rem, 15vw, 13rem);
-  line-height: 1;
-  margin: 0 0.2rem;
+  font-size: clamp(5rem, 15vw, 13rem);
+  line-height: 0.9;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-.min {
-  margin-left: -1vw;
+.dot {
+  margin-top: -0.5rem;
 }
 
 .invisible {
@@ -113,45 +117,50 @@ body {
   .digital-clock {
     flex-direction: column;
     padding: 1rem;
-    border-radius: 1rem;
+    gap: 1.5rem;
+    border-radius: 1.5rem;
   }
 
   .week {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-    justify-content: center;
+    border-right: none;
+    border-bottom: 2px solid #2d2d2d;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    gap: 0.8rem;
   }
 
   .hour,
   .min,
   .dot {
-    font-size: clamp(3rem, 12vw, 5rem);
-  }
-
-  .min {
-    margin-left: -0.5rem;
+    font-size: 9rem;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 1.5rem 0.5rem;
+  }
+
   .text h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .digital-clock {
+    padding: 1rem;
+    border-width: 0.4rem;
+  }
+
+  .week {
+    font-size: 0.8rem;
+    gap: 0.6rem;
   }
 
   .hour,
   .min,
   .dot {
-    font-size: 2.5rem;
-  }
-
-  .min {
-    margin-left: 1px;
-  }
-
-  .week {
-    font-size: 0.7rem;
-    gap: 0.3rem;
+    font-size: 4.5rem;
   }
 }
